@@ -9,6 +9,7 @@ class Handler implements URLHandler {
     String key = "";
     ArrayList<String> list = new ArrayList<String>();
     ArrayList<String> searched = new ArrayList<String>();
+    ArrayList<String> noDuplicates = new ArrayList<String>();
 
     public String handleRequest(URI url) {
         System.out.println("Path: " + url.getPath());
@@ -34,8 +35,6 @@ class Handler implements URLHandler {
                     }
                 }          
                 
-                ArrayList<String> noDuplicates = new ArrayList<String>();
-
                 for(String s: searched) {
                     if (!noDuplicates.contains(s)) {
                         noDuplicates.add(s);
